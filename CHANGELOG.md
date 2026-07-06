@@ -26,9 +26,12 @@
 - 本版本不替代原有视觉规范，而是在文案生成层增加人工编辑感和发布前质检。
 - 后续新增案例建议补充 AI 味自查评分和去 AI 味修改说明，便于形成可复用案例库。
 
+---
+
 ## [0.2.0] - 2026-07-01
 
 ### Added
+
 - Standard GitHub repository structure.
 - `LICENSE` using an all-rights-reserved default for protected brand/content assets.
 - `.gitignore` for common system, editor, archive, and working files.
@@ -42,9 +45,12 @@
 - `docs/source_and_compliance.md` for fact-checking and health/education compliance.
 - `assets/ASSET_INDEX.md` to document the current visual reference set.
 
+---
+
 ## [0.1.0] - 2026-07-01
 
 ### Added
+
 - Initial skill package for BGI science hotspot translation.
 - `SKILL.md` main instruction file.
 - Templates for Xiaohongshu copywriting, image planning, and workflow QA.
