@@ -25,6 +25,8 @@ REQUIRED = [
     '.github/PULL_REQUEST_TEMPLATE.md',
     '.github/ISSUE_TEMPLATE/new_hotspot.md',
     '.github/ISSUE_TEMPLATE/visual_refinement.md',
+    'docs/anti_ai_editorial_layer.md',
+    'templates/anti_ai_self_check.md',
 ]
 
 def main() -> int:
