@@ -2,39 +2,39 @@
 
 ```text
 BGI_science_hotspots_skill/
-├── README.md                              # 仓库说明与快速开始
-├── SKILL.md                              # 主技能文件，最重要
-├── LICENSE                               # 默认保留所有权利，可按需替换
-├── VERSION                               # 当前版本
-├── CHANGELOG.md                          # 版本更新记录
-├── CONTRIBUTING.md                       # 贡献与新增案例规范
-├── REPOSITORY_STRUCTURE.md               # 仓库结构说明
+├── README.md                         # 仓库说明与快速开始
+├── SKILL.md                          # 主技能文件，最重要
+├── LICENSE                           # 默认保留所有权利，可按需替换
+├── VERSION                           # 当前版本
+├── CHANGELOG.md                      # 版本更新记录
+├── CONTRIBUTING.md                   # 贡献与新增案例规范
+├── REPOSITORY_STRUCTURE.md           # 仓库结构说明
 ├── prompts/
-│   └── master_prompt.md                  # 可直接复制使用的总提示词
+│   └── master_prompt.md              # 可直接复制使用的总提示词
 ├── templates/
-│   ├── xiaohongshu_copy_template.md      # 小红书文案模板
-│   ├── image_generation_template.md      # 图片生成模板
-│   ├── workflow_checklist.md             # 工作流检查清单
-│   └── anti_ai_self_check.md             # AI 味自查自纠评分模块
+│   ├── xiaohongshu_copy_template.md  # 小红书文案模板
+│   ├── image_generation_template.md  # 图片生成模板
+│   ├── workflow_checklist.md         # 工作流检查清单
+│   └── anti_ai_self_check.md         # AI 味自查自纠评分模块
 ├── examples/
-│   ├── 01_whale_fall.md                  # 鲸落案例
-│   ├── 02_muscle_loss.md                 # 肌肉流失案例
-│   └── 03_juno.md                        # JUNO 案例
+│   ├── 01_whale_fall.md              # 发现型科普案例：鲸落
+│   ├── 02_muscle_loss.md             # 机制型科普案例：肌肉流失
+│   └── 03_juno.md                    # 技术型科普案例：JUNO
 ├── docs/
-│   ├── content_strategy.md               # 内容策略
-│   ├── source_and_compliance.md          # 来源与合规
-│   ├── visual_style_guide.md             # 视觉规范
-│   └── anti_ai_editorial_layer.md        # 去 AI 味人工编辑层
+│   ├── content_strategy.md           # 内容策略
+│   ├── source_and_compliance.md      # 来源与合规
+│   ├── visual_style_guide.md         # 视觉规范
+│   └── anti_ai_editorial_layer.md    # 去 AI 味人工编辑层
 ├── assets/
-│   ├── ASSET_INDEX.md                    # 图片资产索引
-│   └── *.png                             # 视觉参考图
+│   ├── ASSET_INDEX.md                # 图片资产索引
+│   └── *.png                         # 视觉参考图
 ├── scripts/
-│   └── check_repo.py                     # 本地结构检查脚本
+│   └── check_repo.py                 # 本地结构检查脚本
 └── .github/
     ├── ISSUE_TEMPLATE/
-    │   ├── new_hotspot.md                # 新热点需求模板
-    │   └── visual_refinement.md          # 图片修改需求模板
-    └── PULL_REQUEST_TEMPLATE.md          # PR 模板
+    │   ├── new_hotspot.md            # 新热点需求模板
+    │   └── visual_refinement.md      # 图片修改需求模板
+    └── PULL_REQUEST_TEMPLATE.md      # PR 模板
 ```
 
 ---
@@ -45,19 +45,20 @@ BGI_science_hotspots_skill/
 
 模型长期复用的核心规则。
 
-这是整个仓库最重要的文件。  
+这是整个仓库最重要的文件。
+
 如果只复制一个文件给模型使用，优先复制 `SKILL.md`。
 
 它定义：
 
-- 华大教育中心科学热点转译定位
-- 三类内容方向
+- 科学热点小红书科普转译定位
+- 四类内容方向：发现型 / 机制型 / 技术型 / 争议反常识型
 - 文案结构
 - 事实核验要求
 - 去 AI 味编辑流程
 - AI 味自查评分规则
 - 轮播图生成规则
-- 健康、教育、科学合规要求
+- 健康、科研、技术、图片合规要求
 
 ---
 
@@ -88,7 +89,7 @@ BGI_science_hotspots_skill/
 
 核心目标：
 
-让内容像一个懂科学、懂教育、懂传播的人看到科学热点后的真实判断，而不是标准 AI 生成文案。
+让内容像一个懂科学、懂传播的人看到科学热点后的真实判断，而不是标准 AI 生成文案或机构宣传稿。
 
 ---
 
@@ -109,8 +110,7 @@ AI 味自查自纠评分模块。
 - 情绪克制度
 - 人工编辑完成度
 
-总分 40 分。  
-低于 30 分不建议发布，必须重写或局部修改。
+总分 40 分。低于 30 分不建议发布，必须重写或局部修改。
 
 ---
 
@@ -123,7 +123,7 @@ AI 味自查自纠评分模块。
 - 小红书轮播图风格统一
 - 科学信息图不跑偏
 - 不出现低级海报感、电商风、过度 AI 风
-- 后续批量生成图片时保持同一套品牌视觉语言
+- 后续批量生成图片时保持同一套视觉语言
 
 ---
 
@@ -140,6 +140,7 @@ AI 味自查自纠评分模块。
 6. templates/workflow_checklist.md
 7. docs/visual_style_guide.md
 8. templates/image_generation_template.md
+9. assets/ASSET_INDEX.md
 ```
 
 ---
@@ -168,11 +169,12 @@ AI 味自查自纠评分模块。
 当前结构对应建议版本：
 
 ```text
-0.3.0
+0.4.0
 ```
 
-本版本相较 `0.2.0` 的关键变化：
+本版本相较 `0.3.0` 的关键变化：
 
-- 新增去 AI 味人工编辑层
-- 新增 AI 味自查自纠评分模块
-- 将内容生产流程从“生成稿件”升级为“生成稿件 + 人工编辑风格优化 + 发布前质检”
+- 从“教育 / 品牌转化型科学热点 skill”改为“纯科普转译型 skill”
+- 删除默认教育洞察、孩子成长、课程转化和机构品牌导向
+- 将内容方向改为发现型 / 机制型 / 技术型 / 争议反常识型
+- 保留事实核验、去 AI 味、视觉规范、合规检查和小红书传播结构
