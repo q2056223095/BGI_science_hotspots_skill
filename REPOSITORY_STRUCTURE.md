@@ -2,179 +2,133 @@
 
 ```text
 BGI_science_hotspots_skill/
-├── README.md                         # 仓库说明与快速开始
-├── SKILL.md                          # 主技能文件，最重要
-├── LICENSE                           # 默认保留所有权利，可按需替换
-├── VERSION                           # 当前版本
-├── CHANGELOG.md                      # 版本更新记录
-├── CONTRIBUTING.md                   # 贡献与新增案例规范
-├── REPOSITORY_STRUCTURE.md           # 仓库结构说明
+├── README.md
+├── SKILL.md
+├── LICENSE
+├── VERSION
+├── CHANGELOG.md
+├── CONTRIBUTING.md
+├── REPOSITORY_STRUCTURE.md
+├── THIRD_PARTY_NOTICES.md
 ├── prompts/
-│   └── master_prompt.md              # 可直接复制使用的总提示词
+│   └── master_prompt.md
 ├── templates/
-│   ├── xiaohongshu_copy_template.md  # 小红书文案模板
-│   ├── image_generation_template.md  # 图片生成模板
-│   ├── workflow_checklist.md         # 工作流检查清单
-│   └── anti_ai_self_check.md         # AI 味自查自纠评分模块
-├── examples/
-│   ├── 01_whale_fall.md              # 发现型科普案例：鲸落
-│   ├── 02_muscle_loss.md             # 机制型科普案例：肌肉流失
-│   └── 03_juno.md                    # 技术型科普案例：JUNO
+│   ├── xiaohongshu_copy_template.md
+│   ├── image_generation_template.md
+│   ├── workflow_checklist.md
+│   └── anti_ai_self_check.md
 ├── docs/
-│   ├── content_strategy.md           # 内容策略
-│   ├── source_and_compliance.md      # 来源与合规
-│   ├── visual_style_guide.md         # 视觉规范
-│   └── anti_ai_editorial_layer.md    # 去 AI 味人工编辑层
+│   ├── content_strategy.md
+│   ├── source_and_compliance.md
+│   ├── visual_style_guide.md
+│   ├── human_editorial_layer.md
+│   └── anti_ai_editorial_layer.md
+├── examples/
+│   ├── 01_whale_fall.md
+│   ├── 02_muscle_loss.md
+│   ├── 03_juno.md
+│   └── 04_human_editorial_before_after.md
 ├── assets/
-│   ├── ASSET_INDEX.md                # 图片资产索引
-│   └── *.png                         # 视觉参考图
+│   ├── ASSET_INDEX.md
+│   └── *.png
 ├── scripts/
-│   └── check_repo.py                 # 本地结构检查脚本
+│   ├── check_repo.py
+│   └── check_copy_style.py
 └── .github/
     ├── ISSUE_TEMPLATE/
-    │   ├── new_hotspot.md            # 新热点需求模板
-    │   └── visual_refinement.md      # 图片修改需求模板
-    └── PULL_REQUEST_TEMPLATE.md      # PR 模板
+    │   ├── new_hotspot.md
+    │   └── visual_refinement.md
+    └── PULL_REQUEST_TEMPLATE.md
 ```
 
 ---
 
-## 最重要的 5 个文件
+## 核心文件
 
-### 1. `SKILL.md`
+### `SKILL.md`
 
-模型长期复用的核心规则。
+主技能规则。定义事实核验、材料卡、说话位置、段落推进、科学边界、小红书呈现、轮播图和合规要求。
 
-这是整个仓库最重要的文件。
+只复制一个文件时，优先使用它。
 
-如果只复制一个文件给模型使用，优先复制 `SKILL.md`。
+### `docs/human_editorial_layer.md`
 
-它定义：
+初稿后的活人感编辑层。重点检查：
 
-- 科学热点小红书科普转译定位
-- 四类内容方向：发现型 / 机制型 / 技术型 / 争议反常识型
-- 文案结构
-- 事实核验要求
-- 去 AI 味编辑流程
-- AI 味自查评分规则
-- 轮播图生成规则
-- 健康、科研、技术、图片合规要求
+- 材料是否足以支撑篇幅
+- 作者凭什么知道
+- 每段新增了什么
+- 是否虚构现场、亲历和读者反应
+- 是否使用翻案腔、洞察路标和名词化表达
+- 句长、连词和结尾是否自然
+- 科学边界是否放在正确位置
 
----
+### `docs/anti_ai_editorial_layer.md`
 
-### 2. `prompts/master_prompt.md`
+旧文件名的兼容入口。0.5.0 起转向 `docs/human_editorial_layer.md`。
 
-下次对话可直接复制粘贴的完整提示词。
+### `templates/xiaohongshu_copy_template.md`
 
-适合：
+动笔前工作卡。包含任务、来源身份、材料卡、说话位置、主路径、段落推进和科学边界。
 
-- 快速启动一个新热点
-- 给 DeepSeek / Kimi / Claude / GPT 等模型复用
-- 让不同模型保持同一套工作流
+### `templates/anti_ai_self_check.md`
 
----
+发布前内部评分。新增材料充分度、段落推进、说话位置和模型化修辞控制。
 
-### 3. `docs/anti_ai_editorial_layer.md`
+### `scripts/check_copy_style.py`
 
-去 AI 味人工编辑层。
+中文文风静态检查脚本。检查高风险翻案腔、洞察路标、假读者、伪人味、名词化、连词密度和句长整齐度。
 
-用于解决：
-
-- 文案太像 AI
-- 句式太整齐
-- 转化太硬
-- 口号感太强
-- 大词太多
-- 缺少真实观察和具体细节
-
-核心目标：
-
-让内容像一个懂科学、懂传播的人看到科学热点后的真实判断，而不是标准 AI 生成文案或机构宣传稿。
-
----
-
-### 4. `templates/anti_ai_self_check.md`
-
-AI 味自查自纠评分模块。
-
-用于每篇文案发布前评分。
-
-评分维度包括：
-
-- 真实感
-- 具体性
-- 句式自然度
-- 科学可信度
-- 平台适配度
-- 转化克制度
-- 情绪克制度
-- 人工编辑完成度
-
-总分 40 分。低于 30 分不建议发布，必须重写或局部修改。
-
----
-
-### 5. `docs/visual_style_guide.md`
-
-图片风格保持一致的依据。
-
-用于保证：
-
-- 小红书轮播图风格统一
-- 科学信息图不跑偏
-- 不出现低级海报感、电商风、过度 AI 风
-- 后续批量生成图片时保持同一套视觉语言
+脚本只报警，不自动改文。
 
 ---
 
 ## 推荐使用顺序
 
-每次处理一个新科学热点时，建议按以下文件顺序执行：
-
 ```text
 1. SKILL.md
-2. docs/content_strategy.md
-3. docs/source_and_compliance.md
-4. docs/anti_ai_editorial_layer.md
-5. templates/anti_ai_self_check.md
-6. templates/workflow_checklist.md
-7. docs/visual_style_guide.md
-8. templates/image_generation_template.md
-9. assets/ASSET_INDEX.md
+2. docs/source_and_compliance.md
+3. templates/xiaohongshu_copy_template.md
+4. 生成事实初稿
+5. docs/human_editorial_layer.md
+6. templates/anti_ai_self_check.md
+7. scripts/check_copy_style.py
+8. docs/visual_style_guide.md
+9. templates/image_generation_template.md
+10. assets/ASSET_INDEX.md
 ```
 
 ---
 
-## 新增案例时的建议结构
+## 新增案例规范
 
-如果后续在 `examples/` 中新增案例，建议每个案例至少包含：
+每个案例建议包含：
 
-```text
-1. 热点背景
-2. 核心事实
-3. 选题判断
-4. 小红书标题
-5. 小红书正文
-6. AI 味自查评分
-7. 去 AI 味修改说明
-8. 5 张轮播图规划
-9. 图片生成提示词
-10. 合规检查
-```
+1. 内容类型
+2. 本篇唯一主要任务
+3. 材料卡
+4. 说话位置
+5. 不建议写法及问题定位
+6. 推荐写法方向或完整成稿
+7. 科学边界
+8. 轮播图规划
+
+不再要求公开内部评分。示例应展示修改动作，而不是让模型记住一组固定句式。
 
 ---
 
-## 版本说明
+## 版本
 
-当前结构对应建议版本：
+当前结构对应：
 
 ```text
-0.4.0
+0.5.0
 ```
 
-本版本相较 `0.3.0` 的关键变化：
+关键升级：
 
-- 从“教育 / 品牌转化型科学热点 skill”改为“纯科普转译型 skill”
-- 删除默认教育洞察、孩子成长、课程转化和机构品牌导向
-- 将内容方向改为发现型 / 机制型 / 技术型 / 争议反常识型
-- 保留事实核验、去 AI 味、视觉规范、合规检查和小红书传播结构
+- 从“去 AI 味句式控制”升级为“材料、推进和中文动作”
+- 不再强制固定六段式
+- 禁止虚构读者反应和伪现场
+- 新增文风检查脚本
+- 保留科学事实、视觉与合规为最高约束
