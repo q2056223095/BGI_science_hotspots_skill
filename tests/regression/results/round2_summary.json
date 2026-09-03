@@ -1,5 +1,6 @@
 {
   "round": 2,
+  "protocol": "manual same-model controlled replay; not seed-controlled and not a statistical benchmark",
   "versions": {
     "0.4.0": {
       "mean": 75.1,
