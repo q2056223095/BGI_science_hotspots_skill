@@ -41,6 +41,7 @@ REQUIRED = [
     "tests/VALIDATION.md",
     "tests/regression/manifest.json",
     "tests/regression/round2_cases.json",
+    "tests/regression/results/README.md",
     "tests/regression/results/round1.md",
     "tests/regression/results/round2.md",
     "tests/regression/results/round2_runs.json",
