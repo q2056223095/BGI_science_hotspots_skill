@@ -44,6 +44,7 @@ REQUIRED = [
     "tests/regression/results/round1.md",
     "tests/regression/results/round2.md",
     "tests/regression/results/round2_runs.json",
+    "tests/regression/results/ROUND2_SOURCE_NOTES.md",
 
     "assets/ASSET_INDEX.md",
 
