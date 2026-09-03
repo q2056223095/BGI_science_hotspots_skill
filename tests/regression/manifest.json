@@ -1,0 +1,146 @@
+{
+  "suite_version": "1.0",
+  "frozen_baselines": {
+    "0.4.0": "8ba25cd5f44f723e0b23e4581209c6204e1ab849",
+    "0.5.1": "602c1d9766cb18d22b80764d0cd75fcf581248b7"
+  },
+  "cases": [
+    {
+      "id": "R001",
+      "type": "mechanism",
+      "title": "燕麦抗旱：两个约11 Gb基因组与52个候选基因",
+      "user_task": "把这项燕麦抗旱研究做成一条适合小红书的科学科普，讲清研究做了什么、发现了什么、哪些地方不能写过头。",
+      "sources": [
+        "https://www.nature.com/articles/s41467-026-76610-4"
+      ],
+      "source_facts": [
+        "Nature Communications，2026-08-10发表",
+        "组装抗旱Borris37和敏感XymC06两个高质量燕麦基因组，大小10.92 Gb和10.96 Gb",
+        "整合群体基因组、转录组和苗期存活表型，识别52个抗旱候选基因",
+        "Borris37累计拥有36个有利等位基因",
+        "AsNF-YB3启动子InDel影响AsARF1结合；过表达AsNF-YB3降低ROS积累"
+      ],
+      "expected_behaviors": [
+        "明确这是苗期抗旱研究，不泛化为所有生育阶段",
+        "52个是候选基因，不写成52个已经确认的抗旱基因",
+        "把结构变异、表达和表型之间的证据链讲清楚",
+        "不把育种资源直接写成已经实现田间增产或商业化"
+      ],
+      "failure_traps": [
+        "把候选基因写成确定因果基因",
+        "把苗期存活外推为全生命周期抗旱",
+        "用全球粮食安全等宏大意义替代具体证据",
+        "写成普通人可以据此选择燕麦品种的生活建议"
+      ]
+    },
+    {
+      "id": "R002",
+      "type": "discovery",
+      "title": "冥王星：近期液氮活动的地表证据",
+      "user_task": "把NASA关于冥王星近期液体活动的消息做成小红书科普。标题要抓人，但不能把证据写成直接拍到了正在流动的液体。",
+      "sources": [
+        "https://science.nasa.gov/blogs/science-news/2026/08/05/nasas-new-horizons-finds-evidence-of-recent-liquid-on-plutos-surface/"
+      ],
+      "source_facts": [
+        "NASA 2026-08-05发布解读，研究论文发表于2026-07-31 Planetary Science Journal",
+        "分析的是New Horizons在2015年飞掠冥王星时获得的影像",
+        "Sputnik Planitia北缘暗色线状和弥散特征与被液体润湿的冰川特征相似",
+        "研究认为这些特征可能由地下液氮偶尔、短暂上涌润湿形成",
+        "冥王星条件下液氮降雨不可能，因此提出从冰川下方上涌的解释"
+      ],
+      "expected_behaviors": [
+        "标题和正文保留evidence/可能/解释层级",
+        "说明影像拍摄于2015年，新研究是对旧数据的新分析",
+        "不写成New Horizons直接拍到液氮河正在流",
+        "讲清为什么研究者倾向地下液氮上涌而不是降雨"
+      ],
+      "failure_traps": [
+        "把dark features直接等同于液氮本体",
+        "把可能、偶尔和短暂删除",
+        "写成2026年NASA重新拍到冥王星液体",
+        "用地外海洋或生命可能性做无依据延伸"
+      ]
+    },
+    {
+      "id": "R003",
+      "type": "technology",
+      "title": "北极zero curtain：GeoCryoAI首次做高分辨率区域制图",
+      "user_task": "把NASA关于北极zero curtain和GeoCryoAI的研究做成技术型科普，重点解释AI到底做了什么，不要写成AI已经预测了未来碳排放。",
+      "sources": [
+        "https://science.nasa.gov/blogs/science-news/2026/08/19/hidden-arctic-freeze/"
+      ],
+      "source_facts": [
+        "NASA 2026-08-19发布；研究见Scientific Reports 8月18日刊期",
+        "zero curtain指土壤在冻结/融化过程中可在接近0摄氏度附近停留数天到数周",
+        "研究团队用GeoCryoAI结合卫星观测、模型输出和可追溯至1891年的地面测量",
+        "产出首批北极区域zero-curtain高分辨率地图",
+        "春季融化期通常比秋季冻结期的zero curtain更长，高湿地区持续更久"
+      ],
+      "expected_behaviors": [
+        "先解释zero curtain物理过程，再解释GeoCryoAI的数据融合角色",
+        "区分制图、观测框架和未来预测能力",
+        "不把AI写成独立发现或万能气候预测器",
+        "说明与冻土碳释放的关系是提升理解和预测所需信息，不是已经算出未来排放"
+      ],
+      "failure_traps": [
+        "AI预测北极未来碳排放",
+        "zero curtain等同永久冻土已经融化",
+        "用1.9万亿吨有机碳直接推成即将释放的量",
+        "忽略卫星、模型和地面观测共同参与"
+      ]
+    },
+    {
+      "id": "R004",
+      "type": "controversy",
+      "title": "长寿哺乳动物与癌症相关位点：Peto悖论的新比较基因组线索",
+      "user_task": "把这项58种哺乳动物的比较研究做成反常识科普。不要写成已经破解了Peto悖论，也不要说长寿动物天生不会得癌。",
+      "sources": [
+        "https://www.nature.com/articles/s41467-026-76479-3"
+      ],
+      "source_facts": [
+        "Nature Communications，2026-08-06发表",
+        "研究比较58种哺乳动物的人类癌症相关位点演化速率",
+        "癌症相关位点的总体演化速率在长寿与短寿物种之间没有显著差异",
+        "在长寿哺乳动物内部，癌症相关位点相对非癌症位点表现出更高的进化保守性",
+        "研究还报告与mRNA甲基化相关的表观遗传特征"
+      ],
+      "expected_behaviors": [
+        "先解释Peto悖论是什么，再说这项研究提供了哪一块线索",
+        "必须保留总体演化速率无显著差异这一容易被忽略的结果",
+        "不把相关位点保守性直接等同于癌症抵抗机制已经被证实",
+        "不外推为人类延寿或防癌建议"
+      ],
+      "failure_traps": [
+        "长寿动物癌症基因更稳定所以不容易得癌",
+        "科学家破解了Peto悖论",
+        "58个物种误写成58个样本",
+        "把比较关联直接写成确定机制或治疗靶点"
+      ]
+    },
+    {
+      "id": "R005",
+      "type": "image_protocol",
+      "title": "单页图片状态机防回归",
+      "user_task": "基于R002冥王星选题，用户先说‘开始做图’，封面确认后又说‘继续生成图4-图5’。",
+      "sources": [
+        "tests/regression/manifest.json#R002"
+      ],
+      "source_facts": [
+        "该测试不评价科学事实，只评价实际图片调用节奏"
+      ],
+      "expected_behaviors": [
+        "第一次开始做图只生成P1，并在返回后停止",
+        "P1确认后按状态逐页推进",
+        "当当前状态来到P4且用户说继续生成图4-图5时，只生成P4并停止",
+        "每次调用只允许一个3:4画布、一个页码、一个核心问题",
+        "P2-P5继承已确认P1的视觉系统"
+      ],
+      "failure_traps": [
+        "首次调用直接生成P1-P5",
+        "把P4和P5拼成双页或四宫格",
+        "一个画布出现多个页码",
+        "生成完当前页后自动继续下一页"
+      ]
+    }
+  ]
+}
