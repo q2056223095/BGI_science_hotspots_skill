@@ -36,6 +36,17 @@ REQUIRED = [
     "examples/04_human_editorial_before_after.md",
 
     "scripts/check_copy_style.py",
+    "scripts/check_regression_suite.py",
+
+    "tests/VALIDATION.md",
+    "tests/regression/manifest.json",
+    "tests/regression/round2_cases.json",
+    "tests/regression/results/README.md",
+    "tests/regression/results/round1.md",
+    "tests/regression/results/round2.md",
+    "tests/regression/results/round2_runs.json",
+    "tests/regression/results/round2_summary.json",
+    "tests/regression/results/ROUND2_SOURCE_NOTES.md",
 
     "assets/ASSET_INDEX.md",
 

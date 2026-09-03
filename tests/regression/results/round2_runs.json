@@ -1,0 +1,43 @@
+{
+  "round": 2,
+  "protocol": {
+    "runs_per_case_per_version": 3,
+    "mode": "manual same-model controlled replay",
+    "seed_controlled": false,
+    "statistical_benchmark": false,
+    "dimensions": [
+      "fact_accuracy_15",
+      "material_evidence_15",
+      "scientific_boundary_15",
+      "overclaim_control_10",
+      "information_density_10",
+      "chinese_editorial_10",
+      "title_accuracy_5",
+      "platform_fit_5",
+      "source_transparency_5",
+      "followup_visual_execution_10"
+    ]
+  },
+  "runs": [
+    {"run_id":"R006-v040-1","case":"R006","version":"0.4.0","scores":[14,12,11,7,8,7,3,5,4,7],"total":78,"critical_failure":false,"key_observation":"区分了小鼠和人体信息，但把exercise-mimetic潜力写得接近治疗路线，人体相关性与外源给药之间的距离提示偏晚。"},
+    {"run_id":"R006-v040-2","case":"R006","version":"0.4.0","scores":[13,12,10,6,8,7,2,5,4,8],"total":75,"critical_failure":false,"key_observation":"标题采用‘运动平替分子’式表达，正文最终纠偏，但标题先制造了超出证据的确定感。"},
+    {"run_id":"R006-v040-3","case":"R006","version":"0.4.0","scores":[14,13,12,8,8,8,3,5,4,6],"total":81,"critical_failure":false,"key_observation":"整体较稳，但材料身份仍以顺滑叙事组织，没有明确拆开小鼠干预、人源肌管和人群相关性。"},
+    {"run_id":"R006-v051-1","case":"R006","version":"0.5.1","scores":[15,14,15,10,9,9,4,5,5,8],"total":94,"critical_failure":false,"key_observation":"第一屏直接说明主要因果证据来自小鼠；人源肌管和人群相关性分别标记，不把BAIBA写成已验证运动平替。"},
+    {"run_id":"R006-v051-2","case":"R006","version":"0.5.1","scores":[15,14,14,10,9,9,4,5,5,8],"total":93,"critical_failure":false,"key_observation":"保留作者提出的exercise-mimetic潜力，同时明确这仍是前临床治疗线索；边界位置正确。"},
+    {"run_id":"R006-v051-3","case":"R006","version":"0.5.1","scores":[15,15,15,10,9,9,4,5,5,8],"total":95,"critical_failure":false,"key_observation":"材料卡驱动最明显的一次：三类证据各自承担不同句子，不需要靠‘运动神药’类叙事连接。"},
+
+    {"run_id":"R007-v040-1","case":"R007","version":"0.4.0","scores":[13,12,11,7,8,8,3,5,4,9],"total":80,"critical_failure":false,"key_observation":"正文中段说明SOD1小鼠模型，但标题和开头沿用了‘ALS里免疫细胞吃神经元’的泛化表达。"},
+    {"run_id":"R007-v040-2","case":"R007","version":"0.4.0","scores":[11,12,8,5,9,8,2,5,4,10],"total":74,"critical_failure":true,"critical_failure_reason":"把小鼠模型机制写成‘ALS中的微胶质细胞会吞噬存活运动神经元’，研究对象身份被新闻标题洗平。","key_observation":"虽然文末补充小鼠实验，开头已把机制归到人类疾病层级，属于source-scope laundering。"},
+    {"run_id":"R007-v040-3","case":"R007","version":"0.4.0","scores":[14,12,12,8,8,8,3,5,4,8],"total":82,"critical_failure":false,"key_observation":"较好保留模型限定，但‘人类ALS微胶质活化’与‘小鼠TAM吞噬机制’仍在同一段并列，证据身份不够醒目。"},
+    {"run_id":"R007-v051-1","case":"R007","version":"0.5.1","scores":[15,14,15,10,9,9,4,5,5,9],"total":95,"critical_failure":false,"key_observation":"标题仍保留问题感，但第一段立即限定SOD1G93A小鼠；明确人类ALS证据只支持微胶质活化背景。"},
+    {"run_id":"R007-v051-2","case":"R007","version":"0.5.1","scores":[15,14,14,10,9,9,4,5,5,9],"total":94,"critical_failure":false,"key_observation":"把新闻标题视为传播材料而不是事实身份，回到论文标题与研究对象重新定范围。"},
+    {"run_id":"R007-v051-3","case":"R007","version":"0.5.1","scores":[15,15,15,10,9,9,4,5,5,9],"total":96,"critical_failure":false,"key_observation":"清楚拆开‘人类ALS中的微胶质活化’和‘小鼠模型中的TAM依赖吞噬’，没有把延寿结果转成治疗承诺。"},
+
+    {"run_id":"R008-v040-1","case":"R008","version":"0.4.0","scores":[11,11,7,4,7,8,2,5,3,10],"total":68,"critical_failure":true,"critical_failure_reason":"把公司n=7开放标签初步数据包装成‘每周一针16周BMI下降11.6%的新一代减重药’，弱化了特殊适应人群和证据等级。","key_observation":"保留了数字，但没有把company-reported、ongoing和acquired hypothalamic obesity放在第一屏。"},
+    {"run_id":"R008-v040-2","case":"R008","version":"0.4.0","scores":[12,11,8,5,8,8,2,5,3,10],"total":72,"critical_failure":false,"key_observation":"提到样本量和Phase 2，但沿用公司‘与setmelanotide/bivamelagon相当’的跨试验比较，未充分说明不是头对头。"},
+    {"run_id":"R008-v040-3","case":"R008","version":"0.4.0","scores":[10,10,6,4,7,8,2,5,4,10],"total":66,"critical_failure":true,"critical_failure_reason":"把公司历史横向比较写成RM-718疗效已与现有药物相当，并用‘新一代减重药’泛化到普通肥胖。","key_observation":"来源虽被列出，但没有把公司自述视为需要降级的事实身份。"},
+    {"run_id":"R008-v051-1","case":"R008","version":"0.5.1","scores":[15,14,14,10,9,9,4,5,5,7],"total":92,"critical_failure":false,"key_observation":"第一屏写清公司披露、n=7、开放标签、ongoing、特殊疾病人群；把11.6%作为初步信号而非稳定疗效。"},
+    {"run_id":"R008-v051-2","case":"R008","version":"0.5.1","scores":[15,14,14,9,9,9,4,5,5,7],"total":91,"critical_failure":false,"key_observation":"正确指出跨试验比较不能证明等效或优效；保留两名因不良事件停药和常见不良事件。"},
+    {"run_id":"R008-v051-3","case":"R008","version":"0.5.1","scores":[15,15,15,10,9,9,4,5,5,7],"total":94,"critical_failure":false,"key_observation":"把‘公司认为有临床意义’明确归为公司表述，并说明现阶段不能推广为普通肥胖人群的减重结论。"}
+  ]
+}
