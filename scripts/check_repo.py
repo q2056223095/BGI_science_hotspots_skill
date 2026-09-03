@@ -50,6 +50,9 @@ REQUIRED = [
     "tests/regression/results/round2_runs.json",
     "tests/regression/results/round2_summary.json",
     "tests/regression/results/ROUND2_SOURCE_NOTES.md",
+    "tests/regression/results/round3.md",
+    "tests/regression/results/round3_runs.json",
+    "tests/regression/results/round3_summary.json",
 
     "assets/ASSET_INDEX.md",
 
@@ -99,6 +102,7 @@ def main() -> int:
 
     print(f"Version: {version}")
     print("Evidence Identity markers: passed")
+    print("Round 3 acceptance artifacts: present")
     print("Structure check passed.")
     return 0
 
