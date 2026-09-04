@@ -1,5 +1,109 @@
 # Changelog
 
+## 0.5.2
+
+### Evidence Identity & Claim Ceiling Layer
+
+本版本由 Regression Round 2 的三个高风险 Case 反推而来。核心目标不是增加“谨慎措辞”，而是在写作前建立统一的证据身份层，规定每条关键证据最多允许支持到什么结论。
+
+核心公式：
+
+```text
+最终结论 <= 证据允许的 Claim Ceiling
+```
+
+核心原则升级为：
+
+```text
+事实决定有没有，
+证据身份决定能说多远，
+材料决定能写多长，
+平台只决定怎样呈现。
+```
+
+### 新增 Evidence Identity 六字段
+
+关键证据写作前必须判断：
+
+- `source_identity`
+- `evidence_subject`
+- `study_design`
+- `evidence_stage`
+- `claim_type`
+- `claim_ceiling`
+
+并为关键 Evidence Card 同时记录：
+
+```text
+Allowed Claim
+Forbidden Upgrade
+```
+
+### 新增 Claim Ceiling Gate
+
+事实初稿完成后，对标题和正文中的关键 Claim 回映射：
+
+```text
+Claim
+→ Evidence ID
+→ Claim Type
+→ Claim Ceiling
+→ 是否越级
+```
+
+找不到 Evidence ID 的重要结论必须补来源、删除或降级。
+
+### 新增五类 Evidence Laundering
+
+- `Subject Laundering`：研究对象洗宽，如 `mouse model → human disease`
+- `Source-Scope Laundering`：传播标题覆盖原论文更窄的研究范围
+- `Evidence Laundering`：动物 / 体外 / 观察证据拼成更强人体结论
+- `Comparison Laundering`：cross-trial 历史数字写成头对头优效 / 等效
+- `Stage Laundering`：prediction / backtest / preliminary / prototype 写成 validated / deployed / proven
+
+这些行为升级为事实结构错误，而不是普通文风问题。
+
+### 新增机器可读回归 Contract
+
+新增：
+
+- `docs/evidence_identity_layer.md`
+- `templates/evidence_identity_card.md`
+- `tests/regression/evidence_identity_contract.json`
+
+Round 2 的 R006–R008 被固定为 Evidence Identity 长期核心回归：
+
+- R006：动物 / 体外 / 人群观察证据不得洗强
+- R007：传播标题不得洗掉 `mouse model` 范围
+- R008：`company-reported + ongoing open-label + n=7 + cross-trial` 必须降级
+
+### 同步更新主执行链
+
+更新：
+
+- `SKILL.md`
+- `prompts/master_prompt.md`
+- `templates/workflow_checklist.md`
+- `templates/xiaohongshu_copy_template.md`
+- `docs/source_and_compliance.md`
+- `scripts/check_regression_suite.py`
+- `scripts/check_repo.py`
+- `README.md`
+- `REPOSITORY_STRUCTURE.md`
+- `VERSION`
+
+### 保留 0.5.1 图片状态机
+
+0.5.2 不回退 0.5.1 的实际出图协议：
+
+```text
+P1 only → 等确认 → P2 only → P3 only → P4 only → P5 only
+```
+
+仍禁止四宫格、双页、分屏、contact sheet、长图和任何多页合成。
+
+---
+
 ## 0.5.1
 
 ### 图片生成执行协议修复

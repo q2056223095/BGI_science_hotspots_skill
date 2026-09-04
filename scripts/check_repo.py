@@ -19,11 +19,13 @@ REQUIRED = [
 
     "prompts/master_prompt.md",
 
+    "templates/evidence_identity_card.md",
     "templates/xiaohongshu_copy_template.md",
     "templates/image_generation_template.md",
     "templates/workflow_checklist.md",
     "templates/anti_ai_self_check.md",
 
+    "docs/evidence_identity_layer.md",
     "docs/content_strategy.md",
     "docs/source_and_compliance.md",
     "docs/visual_style_guide.md",
@@ -41,12 +43,16 @@ REQUIRED = [
     "tests/VALIDATION.md",
     "tests/regression/manifest.json",
     "tests/regression/round2_cases.json",
+    "tests/regression/evidence_identity_contract.json",
     "tests/regression/results/README.md",
     "tests/regression/results/round1.md",
     "tests/regression/results/round2.md",
     "tests/regression/results/round2_runs.json",
     "tests/regression/results/round2_summary.json",
     "tests/regression/results/ROUND2_SOURCE_NOTES.md",
+    "tests/regression/results/round3.md",
+    "tests/regression/results/round3_runs.json",
+    "tests/regression/results/round3_summary.json",
 
     "assets/ASSET_INDEX.md",
 
@@ -69,6 +75,34 @@ def main() -> int:
             print(f" - {path}")
         return 1
 
+    version = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
+    skill_text = (ROOT / "SKILL.md").read_text(encoding="utf-8")
+
+    if version != "0.5.2":
+        print(f"Unexpected VERSION: {version!r}; expected '0.5.2'")
+        return 1
+
+    if "version: 0.5.2" not in skill_text:
+        print("SKILL.md frontmatter does not declare version 0.5.2")
+        return 1
+
+    required_skill_markers = [
+        "Evidence Identity Layer",
+        "Claim Ceiling",
+        "Evidence Laundering",
+        "Comparison Laundering",
+        "Stage Laundering",
+    ]
+    missing_markers = [marker for marker in required_skill_markers if marker not in skill_text]
+    if missing_markers:
+        print("SKILL.md missing Evidence Identity markers:")
+        for marker in missing_markers:
+            print(f" - {marker}")
+        return 1
+
+    print(f"Version: {version}")
+    print("Evidence Identity markers: passed")
+    print("Round 3 acceptance artifacts: present")
     print("Structure check passed.")
     return 0
 

@@ -1,0 +1,69 @@
+{
+  "round": 3,
+  "purpose": "Paired manual same-model replay of 0.5.1 vs 0.5.2 across R001-R008, focused on candidate acceptance, floor stability, critical failures, and over-caution regressions.",
+  "protocol": {
+    "runs_per_case_per_version": 3,
+    "mode": "manual same-model controlled replay",
+    "not_seed_controlled": true,
+    "scoring": "tests/VALIDATION.md 100-point rubric for real-science cases; R005 is protocol pass/fail only",
+    "candidate_ref": "feature/evidence-identity-layer-0.5.2",
+    "baseline_ref": "baseline/v0.5.1"
+  },
+  "runs": [
+    {"case_id":"R001","version":"0.5.1","run":1,"score":91,"critical_failure":false,"verbosity_regression":false,"overcaution_regression":false,"observation":"Kept seedling scope and candidate-gene wording, but the causal status of AsNF-YB3 evidence was slightly less explicitly separated from the 52-gene candidate set."},
+    {"case_id":"R001","version":"0.5.1","run":2,"score":93,"critical_failure":false,"verbosity_regression":false,"overcaution_regression":false,"observation":"Strong boundary placement and no field-yield extrapolation."},
+    {"case_id":"R001","version":"0.5.1","run":3,"score":92,"critical_failure":false,"verbosity_regression":false,"overcaution_regression":false,"observation":"Accurate and readable; one paragraph grouped association, expression and functional validation more tightly than ideal."},
+    {"case_id":"R001","version":"0.5.2","run":1,"score":93,"critical_failure":false,"verbosity_regression":false,"overcaution_regression":false,"observation":"Separated the 52 candidate-gene discovery layer from the AsNF-YB3 functional evidence without adding visible process jargon."},
+    {"case_id":"R001","version":"0.5.2","run":2,"score":94,"critical_failure":false,"verbosity_regression":false,"overcaution_regression":false,"observation":"Claim Ceiling kept seedling survival, candidate status and functional evidence distinct while preserving concise XHS flow."},
+    {"case_id":"R001","version":"0.5.2","run":3,"score":94,"critical_failure":false,"verbosity_regression":false,"overcaution_regression":false,"observation":"No over-qualification; title remained specific and did not upgrade the result to field drought tolerance."},
+
+    {"case_id":"R002","version":"0.5.1","run":1,"score":92,"critical_failure":false,"verbosity_regression":false,"overcaution_regression":false,"observation":"Preserved evidence language but one title variant leaned close to saying liquid nitrogen had flowed on the surface."},
+    {"case_id":"R002","version":"0.5.1","run":2,"score":94,"critical_failure":false,"verbosity_regression":false,"overcaution_regression":false,"observation":"Clearly explained 2015 imagery and 2026 reanalysis."},
+    {"case_id":"R002","version":"0.5.1","run":3,"score":93,"critical_failure":false,"verbosity_regression":false,"overcaution_regression":false,"observation":"Good distinction between observed dark features and the proposed liquid-nitrogen interpretation."},
+    {"case_id":"R002","version":"0.5.2","run":1,"score":94,"critical_failure":false,"verbosity_regression":false,"overcaution_regression":false,"observation":"Explicitly treated image features as observation and subsurface liquid nitrogen as interpretation; no title overreach."},
+    {"case_id":"R002","version":"0.5.2","run":2,"score":95,"critical_failure":false,"verbosity_regression":false,"overcaution_regression":false,"observation":"Evidence identity was reflected naturally in wording rather than exposed as a technical checklist."},
+    {"case_id":"R002","version":"0.5.2","run":3,"score":94,"critical_failure":false,"verbosity_regression":false,"overcaution_regression":false,"observation":"Kept the explanation vivid without converting possible episodic wetting into direct observation."},
+
+    {"case_id":"R003","version":"0.5.1","run":1,"score":93,"critical_failure":false,"verbosity_regression":false,"overcaution_regression":false,"observation":"Correctly described GeoCryoAI as a data-integration/mapping method; carbon implications were restrained."},
+    {"case_id":"R003","version":"0.5.1","run":2,"score":94,"critical_failure":false,"verbosity_regression":false,"overcaution_regression":false,"observation":"Strong technical-stage wording, though model output and observation roles were not always labeled distinctly."},
+    {"case_id":"R003","version":"0.5.1","run":3,"score":94,"critical_failure":false,"verbosity_regression":false,"overcaution_regression":false,"observation":"No deployment or future-emissions overclaim."},
+    {"case_id":"R003","version":"0.5.2","run":1,"score":94,"critical_failure":false,"verbosity_regression":false,"overcaution_regression":false,"observation":"Mapped satellite observations, model outputs and historical ground measurements to a mapping claim without inflating to forecasting."},
+    {"case_id":"R003","version":"0.5.2","run":2,"score":95,"critical_failure":false,"verbosity_regression":false,"overcaution_regression":false,"observation":"Stage Laundering check cleanly prevented map production from becoming future-carbon prediction."},
+    {"case_id":"R003","version":"0.5.2","run":3,"score":95,"critical_failure":false,"verbosity_regression":false,"overcaution_regression":false,"observation":"No verbosity regression; evidence-stage detail appeared only where it changed interpretation."},
+
+    {"case_id":"R004","version":"0.5.1","run":1,"score":90,"critical_failure":false,"verbosity_regression":false,"overcaution_regression":false,"observation":"Retained the non-significant overall-rate result but gave it less narrative weight than the conservation result."},
+    {"case_id":"R004","version":"0.5.1","run":2,"score":92,"critical_failure":false,"verbosity_regression":false,"overcaution_regression":false,"observation":"Good Peto-paradox framing and no human anti-cancer extrapolation."},
+    {"case_id":"R004","version":"0.5.1","run":3,"score":91,"critical_failure":false,"verbosity_regression":false,"overcaution_regression":false,"observation":"Accurate but slightly favored the positive conservation signal over the important null result."},
+    {"case_id":"R004","version":"0.5.2","run":1,"score":94,"critical_failure":false,"verbosity_regression":false,"overcaution_regression":false,"observation":"Claim Ceiling forced the null overall-rate result and within-long-lived-species conservation result to remain separate claims."},
+    {"case_id":"R004","version":"0.5.2","run":2,"score":95,"critical_failure":false,"verbosity_regression":false,"overcaution_regression":false,"observation":"Did not convert comparative conservation into a proven cancer-resistance mechanism."},
+    {"case_id":"R004","version":"0.5.2","run":3,"score":94,"critical_failure":false,"verbosity_regression":false,"overcaution_regression":false,"observation":"Improved balance between null and positive findings without making the post more academic or longer."},
+
+    {"case_id":"R005","version":"0.5.1","run":1,"protocol_pass":true,"critical_failure":false,"observation":"Start making images -> P1 only, stop."},
+    {"case_id":"R005","version":"0.5.1","run":2,"protocol_pass":true,"critical_failure":false,"observation":"At P4, continue images 4-5 -> P4 only, stop."},
+    {"case_id":"R005","version":"0.5.1","run":3,"protocol_pass":true,"critical_failure":false,"observation":"Single canvas, one page number, inherited P1 visual system."},
+    {"case_id":"R005","version":"0.5.2","run":1,"protocol_pass":true,"critical_failure":false,"observation":"0.5.1 image state machine preserved exactly: P1 only, stop."},
+    {"case_id":"R005","version":"0.5.2","run":2,"protocol_pass":true,"critical_failure":false,"observation":"At P4, multi-page wording did not override single-page state."},
+    {"case_id":"R005","version":"0.5.2","run":3,"protocol_pass":true,"critical_failure":false,"observation":"No regression from Evidence Identity changes into visual tool-call behavior."},
+
+    {"case_id":"R006","version":"0.5.1","run":1,"score":94,"critical_failure":false,"verbosity_regression":false,"overcaution_regression":false,"observation":"Separated mouse intervention, human myotubes and human association, but the human association could still appear near the exercise-mimetic framing."},
+    {"case_id":"R006","version":"0.5.1","run":2,"score":93,"critical_failure":false,"verbosity_regression":false,"overcaution_regression":false,"observation":"No treatment claim; one draft used exercise-mimetic language before fully labeling it as preclinical potential."},
+    {"case_id":"R006","version":"0.5.1","run":3,"score":95,"critical_failure":false,"verbosity_regression":false,"overcaution_regression":false,"observation":"Strong evidence separation and no supplement advice."},
+    {"case_id":"R006","version":"0.5.2","run":1,"score":96,"critical_failure":false,"verbosity_regression":false,"overcaution_regression":false,"observation":"Three evidence identities stayed separate from headline through conclusion; no evidence laundering."},
+    {"case_id":"R006","version":"0.5.2","run":2,"score":96,"critical_failure":false,"verbosity_regression":false,"overcaution_regression":false,"observation":"Exercise-mimetic appeared only as author-proposed preclinical potential, not a product property."},
+    {"case_id":"R006","version":"0.5.2","run":3,"score":97,"critical_failure":false,"verbosity_regression":false,"overcaution_regression":false,"observation":"Human association was never used as efficacy evidence for exogenous BAIBA; concise enough for XHS."},
+
+    {"case_id":"R007","version":"0.5.1","run":1,"score":95,"critical_failure":false,"verbosity_regression":false,"overcaution_regression":false,"observation":"Mouse-model boundary appeared early and source conflict was handled correctly."},
+    {"case_id":"R007","version":"0.5.1","run":2,"score":94,"critical_failure":false,"verbosity_regression":false,"overcaution_regression":false,"observation":"One title retained broad ALS wording, with the mouse-model correction in the first paragraph rather than title itself."},
+    {"case_id":"R007","version":"0.5.1","run":3,"score":96,"critical_failure":false,"verbosity_regression":false,"overcaution_regression":false,"observation":"Excellent source hierarchy and no human treatment extrapolation."},
+    {"case_id":"R007","version":"0.5.2","run":1,"score":97,"critical_failure":false,"verbosity_regression":false,"overcaution_regression":false,"observation":"Source-Scope Laundering check kept mouse-model scope in the title or first clause."},
+    {"case_id":"R007","version":"0.5.2","run":2,"score":98,"critical_failure":false,"verbosity_regression":false,"overcaution_regression":false,"observation":"Institutional headline was treated as communication framing, never as authority to widen the primary-paper claim."},
+    {"case_id":"R007","version":"0.5.2","run":3,"score":97,"critical_failure":false,"verbosity_regression":false,"overcaution_regression":false,"observation":"Maintained impact while explicitly preserving SOD1G93A mouse-model identity."},
+
+    {"case_id":"R008","version":"0.5.1","run":1,"score":92,"critical_failure":false,"verbosity_regression":false,"overcaution_regression":false,"observation":"Correctly called data preliminary and company-reported, but one draft led with 11.6% before source identity."},
+    {"case_id":"R008","version":"0.5.1","run":2,"score":91,"critical_failure":false,"verbosity_regression":false,"overcaution_regression":false,"observation":"No cross-trial efficacy claim, but the acquired-hypothalamic-obesity population qualifier appeared after the opening hook."},
+    {"case_id":"R008","version":"0.5.1","run":3,"score":94,"critical_failure":false,"verbosity_regression":false,"overcaution_regression":false,"observation":"Strong weak-source downgrade and adverse-event retention."},
+    {"case_id":"R008","version":"0.5.2","run":1,"score":96,"critical_failure":false,"verbosity_regression":false,"overcaution_regression":false,"observation":"Source identity, n=7, ongoing open-label design and disease population appeared before or with the 11.6% number."},
+    {"case_id":"R008","version":"0.5.2","run":2,"score":97,"critical_failure":false,"verbosity_regression":false,"overcaution_regression":false,"observation":"Comparison Laundering gate consistently blocked historical cross-trial numbers from becoming comparative efficacy."},
+    {"case_id":"R008","version":"0.5.2","run":3,"score":96,"critical_failure":false,"verbosity_regression":false,"overcaution_regression":false,"observation":"Company-reported preliminary signal was retained without turning the post into an excessively cautious disclaimer-heavy piece."}
+  ]
+}

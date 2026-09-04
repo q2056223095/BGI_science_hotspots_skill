@@ -1,0 +1,129 @@
+{
+  "contract_version": "0.5.2",
+  "purpose": "Machine-readable contract for Evidence Identity and Claim Ceiling behavior derived from Regression Round 2.",
+  "global_invariants": [
+    "source_identity_is_not_evidence_strength",
+    "final_claim_must_not_exceed_claim_ceiling",
+    "multiple_weak_evidence_items_do_not_sum_into_stronger_claim",
+    "headline_must_obey_same_claim_ceiling_as_body",
+    "source_scope_conflict_prefers_narrower_directly_supported_primary_scope",
+    "cross_trial_comparison_is_not_head_to_head_comparative_efficacy"
+  ],
+  "required_fields": [
+    "source_identity",
+    "evidence_subject",
+    "study_design",
+    "evidence_stage",
+    "claim_type",
+    "claim_ceiling"
+  ],
+  "critical_failures": [
+    "animal_or_in_vitro_to_human_efficacy",
+    "association_to_causation",
+    "source_scope_laundering",
+    "company_preliminary_to_proven_efficacy",
+    "cross_trial_to_head_to_head",
+    "preliminary_or_ongoing_to_mature_conclusion",
+    "prediction_or_backtest_to_deployment",
+    "prototype_or_pilot_to_scaled_application",
+    "headline_exceeds_claim_ceiling"
+  ],
+  "cases": [
+    {
+      "case_id": "R006",
+      "evidence_identities": [
+        {
+          "label": "mouse intervention",
+          "source_identity": "peer_reviewed_primary",
+          "evidence_subject": "animal_model",
+          "study_design": "animal intervention",
+          "evidence_stage": "peer_reviewed",
+          "claim_type": "causal_mechanism",
+          "claim_ceiling": "BAIBA intervention produced exercise/metabolic or muscle-function effects in the reported mouse experiments and diabetic mouse model."
+        },
+        {
+          "label": "human myotubes",
+          "source_identity": "peer_reviewed_primary",
+          "evidence_subject": "in_vitro",
+          "study_design": "human-cell experiment",
+          "evidence_stage": "peer_reviewed",
+          "claim_type": "mechanistic_clue",
+          "claim_ceiling": "BAIBA altered reported markers in cultured human myotubes; this is not a human clinical efficacy result."
+        },
+        {
+          "label": "human association",
+          "source_identity": "peer_reviewed_primary",
+          "evidence_subject": "human_observational",
+          "study_design": "association plus training-related measurement",
+          "evidence_stage": "peer_reviewed",
+          "claim_type": "association",
+          "claim_ceiling": "Human plasma L-BAIBA was associated with aerobic fitness and changed with endurance training; this does not establish efficacy of exogenous BAIBA in people."
+        }
+      ],
+      "forbidden_upgrades": [
+        "BAIBA is a clinically validated exercise replacement",
+        "BAIBA treats diabetes in humans",
+        "human association proves exogenous BAIBA efficacy",
+        "human myotube experiment is a human clinical trial"
+      ]
+    },
+    {
+      "case_id": "R007",
+      "evidence_identities": [
+        {
+          "label": "ALS mechanism experiment",
+          "source_identity": "peer_reviewed_primary",
+          "evidence_subject": "animal_model",
+          "study_design": "SOD1G93A mouse-model intervention and mechanism study",
+          "evidence_stage": "peer_reviewed",
+          "claim_type": "causal_mechanism",
+          "claim_ceiling": "The reported TAM-dependent microglial mechanism and associated neuron/synapse/lifespan effects were demonstrated in the ALS mouse model used in the study."
+        },
+        {
+          "label": "press headline",
+          "source_identity": "journal_or_institution",
+          "evidence_subject": "animal_model",
+          "study_design": "institutional science communication",
+          "evidence_stage": "press_release",
+          "claim_type": "observation",
+          "claim_ceiling": "The press-release headline may frame the question broadly, but it cannot widen the primary paper's mouse-model scope."
+        }
+      ],
+      "forbidden_upgrades": [
+        "ALS patients have been shown to undergo the same TAM-dependent microglial killing mechanism",
+        "blocking TAM is already an effective ALS treatment in humans",
+        "the press headline can replace the primary paper's research-subject boundary"
+      ]
+    },
+    {
+      "case_id": "R008",
+      "evidence_identities": [
+        {
+          "label": "company preliminary phase 2 disclosure",
+          "source_identity": "company_reported",
+          "evidence_subject": "human_interventional",
+          "study_design": "ongoing open-label phase 2 single-arm study",
+          "evidence_stage": "preliminary_ongoing",
+          "claim_type": "efficacy_signal",
+          "claim_ceiling": "The company reported a preliminary BMI-reduction signal among the seven participants who had reached Week 16 in the ongoing open-label Phase 2 study of acquired hypothalamic obesity."
+        },
+        {
+          "label": "historical cross-trial comparison",
+          "source_identity": "company_reported",
+          "evidence_subject": "human_interventional",
+          "study_design": "cross-trial historical comparison",
+          "evidence_stage": "preliminary_ongoing",
+          "claim_type": "observation",
+          "claim_ceiling": "The company compared numbers reported in separate trials; this is not a randomized head-to-head efficacy comparison."
+        }
+      ],
+      "forbidden_upgrades": [
+        "RM-718 has proven efficacy",
+        "RM-718 is a general obesity drug based on this study",
+        "RM-718 is equal or superior to another drug based on cross-trial numbers",
+        "company-reported preliminary data are independently validated",
+        "investigational means approved or ready for general use"
+      ]
+    }
+  ]
+}

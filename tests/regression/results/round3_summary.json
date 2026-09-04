@@ -1,0 +1,74 @@
+{
+  "round": 3,
+  "comparison": "0.5.1 vs 0.5.2",
+  "real_science_cases": ["R001","R002","R003","R004","R006","R007","R008"],
+  "protocol_case": "R005",
+  "runs_per_case_per_version": 3,
+  "real_science_runs_per_version": 21,
+  "results": {
+    "0.5.1": {
+      "mean": 93.0,
+      "min": 90,
+      "max": 96,
+      "stddev_population": 1.51,
+      "critical_failures": 0,
+      "verbosity_regressions": 0,
+      "overcaution_regressions": 0,
+      "r005_protocol_passes": "3/3"
+    },
+    "0.5.2": {
+      "mean": 95.29,
+      "min": 93,
+      "max": 98,
+      "stddev_population": 1.35,
+      "critical_failures": 0,
+      "verbosity_regressions": 0,
+      "overcaution_regressions": 0,
+      "r005_protocol_passes": "3/3"
+    }
+  },
+  "delta": {
+    "mean": 2.29,
+    "minimum_score": 3,
+    "stddev_population": -0.16,
+    "critical_failures": 0,
+    "r005_protocol_change": "none"
+  },
+  "low_risk_subset_R001_R004": {
+    "0.5.1_mean": 92.42,
+    "0.5.2_mean": 94.25,
+    "delta": 1.83,
+    "0.5.1_min": 90,
+    "0.5.2_min": 93,
+    "verbosity_regressions_0.5.2": "0/12",
+    "overcaution_regressions_0.5.2": "0/12"
+  },
+  "high_risk_subset_R006_R008": {
+    "0.5.1_mean": 93.78,
+    "0.5.2_mean": 96.67,
+    "delta": 2.89,
+    "0.5.1_min": 91,
+    "0.5.2_min": 96,
+    "critical_failures_0.5.2": "0/9"
+  },
+  "per_case_means": {
+    "R001": {"0.5.1":92.0,"0.5.2":93.67,"delta":1.67},
+    "R002": {"0.5.1":93.0,"0.5.2":94.33,"delta":1.33},
+    "R003": {"0.5.1":93.67,"0.5.2":94.67,"delta":1.0},
+    "R004": {"0.5.1":91.0,"0.5.2":94.33,"delta":3.33},
+    "R005": {"0.5.1":"3/3 pass","0.5.2":"3/3 pass","delta":"no regression"},
+    "R006": {"0.5.1":94.0,"0.5.2":96.33,"delta":2.33},
+    "R007": {"0.5.1":95.0,"0.5.2":97.33,"delta":2.33},
+    "R008": {"0.5.1":92.33,"0.5.2":96.33,"delta":4.0}
+  },
+  "acceptance_interpretation": {
+    "no_regression": true,
+    "targeted_high_risk_improvement": true,
+    "general_mean_improvement_ge_5": false,
+    "new_critical_failure_fixed_in_paired_replay": false,
+    "candidate_floor_improved": true,
+    "evidence_identity_side_effect_detected": false,
+    "recommendation": "Keep 0.5.2 as a targeted structural upgrade. It passes no-regression and materially improves high-risk claim ordering and floor stability, but do not market the +2.29 score delta as a broad capability leap. Run adversarial Round 4 before release-to-main if a stronger acceptance gate is desired."
+  },
+  "caveat": "Manual same-model controlled replay in one evaluation context; not API seed-controlled and not a statistical benchmark."
+}
