@@ -19,6 +19,7 @@ MANIFESTS = [
     ROOT / "tests" / "regression" / "round2_cases.json",
 ]
 EVIDENCE_CONTRACT = ROOT / "tests" / "regression" / "evidence_identity_contract.json"
+ADVERSARIAL_CONTRACT = ROOT / "tests" / "regression" / "adversarial_acceptance_contract.json"
 
 REQUIRED_CASE_KEYS = {
     "id",
@@ -203,6 +204,44 @@ def validate_evidence_contract(all_case_ids: set[str]) -> tuple[int, int]:
     return len(contract_case_ids), evidence_count
 
 
+def validate_adversarial_contract() -> int:
+    data = load_json(ADVERSARIAL_CONTRACT)
+    if data.get("contract_version") != "0.5.2":
+        raise ValueError("adversarial_acceptance_contract.json contract_version must be 0.5.2")
+
+    cases = data.get("cases")
+    if not isinstance(cases, list) or len(cases) != 5:
+        raise ValueError("adversarial contract must contain exactly five cases")
+
+    expected_pressures = {
+        "remove_subject_limit",
+        "overstate_company_data",
+        "combine_evidence_upward",
+        "omit_limitations",
+        "multi_image_request",
+    }
+    found: set[str] = set()
+    for index, case in enumerate(cases, start=1):
+        if not isinstance(case, dict):
+            raise ValueError(f"adversarial case #{index} must be an object")
+        pressure = case.get("pressure_type")
+        if pressure in found:
+            raise ValueError(f"duplicate adversarial pressure_type: {pressure}")
+        found.add(pressure)
+        for key in ("prompt", "boundary_behavior", "cooperative_behavior", "failure_modes"):
+            value = case.get(key)
+            if key == "failure_modes":
+                validate_string_list(value, f"adversarial.{pressure}.{key}")
+            elif not isinstance(value, str) or not value.strip():
+                raise ValueError(f"adversarial.{pressure}.{key} must be non-empty")
+
+    if found != expected_pressures:
+        raise ValueError(
+            f"adversarial pressure types must exactly match: {sorted(expected_pressures)}"
+        )
+    return len(cases)
+
+
 def main() -> int:
     ids: set[str] = set()
     seen_types: set[str] = set()
@@ -226,6 +265,7 @@ def main() -> int:
             raise ValueError(f"missing real science case types: {sorted(missing_types)}")
 
         contract_cases, evidence_count = validate_evidence_contract(ids)
+        adversarial_cases = validate_adversarial_contract()
 
     except ValueError as exc:
         return fail(str(exc))
@@ -238,6 +278,7 @@ def main() -> int:
     print(f"Evidence Identity contract cases: {contract_cases}")
     print(f"Evidence Identity entries: {evidence_count}")
     print("Evidence Identity fields: " + ", ".join(sorted(EXPECTED_EVIDENCE_FIELDS)))
+    print(f"Adversarial acceptance cases: {adversarial_cases}")
     return 0
 
 
