@@ -209,7 +209,7 @@ AI给出候选靶点或分子，不等于已完成生物学发现。
 
 ---
 
-## 八、宣传审查｜0.6.1 新增硬步骤
+## 八、宣传审查｜科学门槛通过后
 
 详细规则见 `docs/lifescience_visual_provenance_and_promotion.md`。
 
